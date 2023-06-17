@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function checkform()
+        {
+            var myname = document.getElementById("myname").value;
+            var mytransport;
+            var mydetination;
+            var mystay;
+            if (document.getElementById("transport1").checked)
+            {
+                mytransport = "flight";
+            }
+
+            if (document.getElementById("transport2").checked)
+            {
+                mytransport = "Train";
+            }
+
+            if (document.getElementById("transport3").checked)
+            {
+                mytransport = "Bus";
+            }
+            if (document.getElementById("detination1").checked)
+            {
+                mydetination = "Kl";
+            }
+
+            if (document.getElementById("detination2").checked)
+            {
+                mydetination = "Thailand";
+            }
+
+            if (document.getElementById("detination3").checked)
+            {
+                mydetination = "Singapore";
+            }
+            if (document.getElementById("stay1").checked)
+            {
+                mystay = "hotel";
+            }
+
+            if (document.getElementById("stay2").checked)
+            {
+                mystay = "friend's house";
+            }
+            
+            document.getElementById("input1").innerHTML = "Dear " + myname +" you go to "+ mydetination;
+            document.getElementById("input2").innerHTML = "You are taking a " + mytransport;
+            document.getElementById("input3").innerHTML = "You are staying at " + mystay;
+            return false;
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>How to go to tour</h1>
+    <form method="post"onsubmit="return checkform()">
+    <table border="1" width="500">
+        <tr><td>Name:</td><td><input type="text" id="myname" name="myname" maxlength="30"></td></tr>
+        <tr><td>Go to School:Transport Mode</td><td>
+            <input type="radio" id="transport1" name="transport" value="flight"> flight
+            <input type="radio" id="transport2" name="transport" value="train"> Train
+            <input type="radio" id="transport3" name="transport" value="bus"> Bus
+        </td></tr>
+        <tr><td>Destination: For holiday</td><td>
+            <input type="radio" id="detination1" name="detination" value="kl"> KL
+            <input type="radio" id="detination2" name="detination" value="thailand"> Thailand
+            <input type="radio" id="detination3" name="detination" value="singapore"> Singapore
+        </td></tr>
+        <tr><td>Lodging:Where I stay</td><td>
+            <input type="radio" id="stay1" name="stay" value="hotel"> hotel
+            <input type="radio" id="stay2" name="stay" value="friend's house"> friend's house
+        </td></tr>
+        <tr><td>
+            <input type="submit" value="NEXT"></td><td>Click Next To Display Information</td></tr>
+    </table>
+    </form>
+    <br><br>
+    <table border="1" width="500">
+        <tr><td>Your input</td><td><span id="input1"></span></td></tr>
+        <tr><td>Information1</td><td><span id="input2"></span></td></tr>
+        <tr><td>Information2</td><td><span id="input3"></span></td></tr>
+    </table>
+</body>
+</html>

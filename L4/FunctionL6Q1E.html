@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function checkform()
+        {
+            var myname = document.getElementById("myname").value;
+            var mytransport;
+
+            if (document.getElementById("transport1").checked)
+            {
+                mytransport = "Car";
+            }
+
+            if (document.getElementById("transport2").checked)
+            {
+                mytransport = "Train";
+            }
+
+            if (document.getElementById("transport3").checked)
+            {
+                mytransport = "Bus";
+            }
+            document.getElementById("input1").innerHTML = "Dear " + myname;
+            document.getElementById("input2").innerHTML = "Transport to school:" + mytransport;
+
+            return false;
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>How to go to school</h1>
+    <form method="post"onsubmit="return checkform()">
+    <table border="1" width="500">
+        <tr><td>Name:</td><td><input type="text" id="myname" name="myname" maxlength="30"></td></tr>
+        <tr><td>Go to School:Transport Mode</td><td>
+            <input type="radio" id="transport1" name="transport" value="car"> Car
+            <input type="radio" id="transport2" name="transport" value="train"> Train
+            <input type="radio" id="transport3" name="transport" value="bus"> Bus
+        </td></tr>
+        <tr><td><input type="submit" value="NEXT"></td><td>Click Next To Display Information</td></tr>
+    </table>
+    </form>
+    <br><br>
+    <table border="1" width="500">
+        <tr><td>Your input</td><td><span id="input1"></span></td></tr>
+        <tr><td>Information</td><td><span id="input2"></span></td></tr>
+    </table>
+</body>
+</html>

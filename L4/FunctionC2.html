@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Information</title>
+<script>
+    function checkform()
+    {
+        var myname=document.getElementById("name").value;
+        var myage=document.getElementById("age").value;
+        var mygender;
+        if(document.getElementById("male").checked==true)
+        {
+            mygender="Boy"
+        }
+        if(document.getElementById("female").checked==true)
+        {
+            mygender="Girl"
+        }
+        document.getElementById("textshow").innerHTML="My name is " +myname+". I am "  +myage+" years old. I am a "  +mygender;
+        return false;
+    }
+</script>
+</head>
+<body>
+ <form method="post" onsubmit="return checkform()">
+    <table border="1" width="400">
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" id="name" name="name" maxlength="20" ></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="number" id="age" name="age" min="1" max="99"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+            <input type="radio" id="male" name="gender" value="Male"> Boy 
+            <input type="radio" id="female" name="gender" value="Female">Girl
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Next"></td>
+        </tr>
+    </table>
+ </form>
+ <br><br>
+ <div id="textshow">
+ </div>
+</body>
+</html>
